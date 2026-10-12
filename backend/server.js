@@ -24,18 +24,18 @@ if (isProduction && (demoEmail === "admin@northstar.io" || demoPassword === "nor
 const roles = new Set(["Admin", "Member", "Viewer"]);
 const statuses = new Set(["Active", "Invited", "Suspended"]);
 const users = [
-  ["u_1001", "Olivia Chen", "olivia@northstar.io", "Admin", "Active", "2024-01-14"],
-  ["u_1002", "Marcus Johnson", "marcus@northstar.io", "Member", "Active", "2024-02-08"],
-  ["u_1003", "Sofia Ramirez", "sofia@northstar.io", "Member", "Active", "2024-02-21"],
-  ["u_1004", "Liam Patel", "liam@northstar.io", "Viewer", "Active", "2024-03-05"],
-  ["u_1005", "Amara Okafor", "amara@northstar.io", "Member", "Invited", "2024-03-19"],
-  ["u_1006", "Ethan Williams", "ethan@northstar.io", "Admin", "Active", "2024-04-02"],
-  ["u_1007", "Isabella Kim", "isabella@northstar.io", "Member", "Active", "2024-04-16"],
-  ["u_1008", "Noah Thompson", "noah@northstar.io", "Viewer", "Invited", "2024-05-01"],
-  ["u_1009", "Maya Fischer", "maya@northstar.io", "Member", "Active", "2024-05-14"],
-  ["u_1010", "Lucas Anderson", "lucas@northstar.io", "Member", "Suspended", "2024-06-10"],
-  ["u_1011", "Zara Ahmed", "zara@northstar.io", "Viewer", "Active", "2024-07-03"],
-  ["u_1012", "Theo Martin", "theo@northstar.io", "Member", "Active", "2024-07-25"]
+  ["u_1001", "Aisha Rahman", "olivia@northstar.io", "Admin", "Active", "2024-01-14"],
+  ["u_1002", "Daniel Brooks", "marcus@northstar.io", "Member", "Active", "2024-02-08"],
+  ["u_1003", "Priya Nair", "sofia@northstar.io", "Member", "Active", "2024-02-21"],
+  ["u_1004", "Omar Hassan", "liam@northstar.io", "Viewer", "Active", "2024-03-05"],
+  ["u_1005", "Chloe Bennett", "amara@northstar.io", "Member", "Invited", "2024-03-19"],
+  ["u_1006", "Arjun Mehta", "ethan@northstar.io", "Admin", "Active", "2024-04-02"],
+  ["u_1007", "Fatima Noor", "isabella@northstar.io", "Member", "Active", "2024-04-16"],
+  ["u_1008", "Oliver Grant", "noah@northstar.io", "Viewer", "Invited", "2024-05-01"],
+  ["u_1009", "Layla Haddad", "maya@northstar.io", "Member", "Active", "2024-05-14"],
+  ["u_1010", "Mateo Silva", "lucas@northstar.io", "Member", "Suspended", "2024-06-10"],
+  ["u_1011", "Hannah Park", "zara@northstar.io", "Viewer", "Active", "2024-07-03"],
+  ["u_1012", "Zain Malik", "theo@northstar.io", "Member", "Active", "2024-07-25"]
 ].map(([id, name, email, role, status, joinedAt]) => ({ id, name, email, role, status, joinedAt }));
 
 const revenue = [
@@ -186,7 +186,7 @@ app.post("/api/auth/login", (req, res) => {
   }
 
   loginAttempts.delete(address);
-  const user = { name: "Jordan Davis", email: demoEmail, role: "Admin" };
+  const user = { name: "Sadik Ali", email: demoEmail, role: "Admin" };
   const token = sign({ sub: user.email, iat: Math.floor(now / 1000), exp: Math.floor(now / 1000) + sessionDurationSeconds });
   res.cookie(cookieName, token, cookieOptions());
   return res.json({ user });
@@ -198,7 +198,7 @@ app.post("/api/auth/logout", requireSession, (_req, res) => {
 });
 
 app.get("/api/auth/me", requireSession, (req, res) => {
-  return res.json({ user: { name: "Jordan Davis", email: req.session.sub, role: "Admin" } });
+  return res.json({ user: { name: "Sadik Ali", email: req.session.sub, role: "Admin" } });
 });
 
 app.get("/api/users", requireSession, (_req, res) => res.json({ users: users.map(safeUser) }));

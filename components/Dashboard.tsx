@@ -308,7 +308,7 @@ export default function Dashboard() {
             <button aria-label="Notifications" className="icon-button notification-button" onClick={() => setNotice("You’re all caught up. No new notifications.")} type="button"><Bell size={18} /><i /></button>
             <div className="profile-wrap">
               <button aria-expanded={profileOpen} className="profile-button" onClick={() => setProfileOpen((open) => !open)} type="button">
-                <span className="avatar avatar-admin">JD</span><span className="profile-copy"><strong>Jordan Davis</strong><small>Workspace admin</small></span><ChevronDown size={15} />
+                <span className="avatar avatar-admin">SA</span><span className="profile-copy"><strong>Sadik Ali</strong><small>Workspace admin</small></span><ChevronDown size={15} />
               </button>
               {profileOpen && <div className="profile-menu"><div className="profile-menu-heading">Signed in as<br /><strong>admin@northstar.io</strong></div><button disabled={loggingOut} onClick={logout} type="button"><LogOut size={15} />{loggingOut ? "Signing out..." : "Sign out"}</button></div>}
             </div>
@@ -317,7 +317,7 @@ export default function Dashboard() {
 
         <div className="page-content">
           <div className="page-heading">
-            <div><p className="eyebrow">MONDAY, OCTOBER 12</p><h1>{section === "Overview" ? "Good morning, Jordan" : section === "Users" ? "Your people" : "Analytics"}</h1><p className="page-subtitle">{section === "Users" ? "Manage the people who make your workspace." : "Here’s what’s happening with your business today."}</p></div>
+            <div><p className="eyebrow">MONDAY, OCTOBER 12</p><h1>{section === "Overview" ? "Good morning, Sadik" : section === "Users" ? "Your people" : "Analytics"}</h1><p className="page-subtitle">{section === "Users" ? "Manage the people who make your workspace." : "Here’s what’s happening with your business today."}</p></div>
             <div className="heading-actions"><button className="secondary-button export-button" onClick={exportUsers} type="button"><Download size={16} /> Export</button><button className="primary-button" onClick={openCreate} type="button"><Plus size={17} /> Add user</button></div>
           </div>
 
